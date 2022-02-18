@@ -1,0 +1,6 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/jr4lva3dhpeh/public_html/studiomanager.bgpinfotech.com
+    - /bin/cp * $DEPLOYPATH
+    

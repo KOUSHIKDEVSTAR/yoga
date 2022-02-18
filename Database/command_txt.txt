@@ -1,0 +1,39 @@
+/*=================17-02-22========================================*/
+
+
+ALTER TABLE `users` ADD `emp_ment_typ` VARCHAR(25) NULL DEFAULT NULL AFTER `pin`, ADD `emp_docs` VARCHAR(255) NULL DEFAULT NULL AFTER `emp_ment_typ`, ADD `id_docs_name` VARCHAR(25) NULL DEFAULT NULL AFTER `emp_docs`, ADD `id_docs_no` VARCHAR(25) NULL DEFAULT NULL AFTER `id_docs_name`, ADD `profile_img` VARCHAR(255) NULL DEFAULT NULL AFTER `id_docs_no`, ADD `tax_id` VARCHAR(255) NULL DEFAULT NULL AFTER `profile_img`, ADD `dob` VARCHAR(23) NULL DEFAULT NULL AFTER `tax_id`, ADD `date_of_joining` VARCHAR(34) NULL DEFAULT NULL AFTER `dob`, ADD `created_at` VARCHAR(50) NULL DEFAULT NULL AFTER `date_of_joining`, ADD `is_active` INT NOT NULL DEFAULT '1' AFTER `created_at`;
+
+
+ALTER TABLE `users` ADD `is_deleted` INT NOT NULL DEFAULT '0' AFTER `is_active`;
+
+/*=================17-02-22========================================*/
+/*=================18-02-22========================================*/
+
+CREATE TABLE `site_setting` (
+  `setting_id` int(11) NOT NULL,
+  `setting_data` varchar(255) DEFAULT NULL,
+  `setting_value` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `site_setting`
+--
+ALTER TABLE `site_setting`
+  ADD PRIMARY KEY (`setting_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `site_setting`
+--
+ALTER TABLE `site_setting`
+  MODIFY `setting_id` int(11) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
+/*=================18-02-22========================================*/

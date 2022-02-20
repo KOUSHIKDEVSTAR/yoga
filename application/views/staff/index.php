@@ -147,12 +147,16 @@
                                                  <?php } ?>
 
                                                  <td>
+                                                 <?php if(in_array('updateUser', $user_permission)): ?>
                                                      <a href="<?php echo base_url('staff/edit/');?><?= $staff->id;?>"><i
                                                              data-toggle="tooltip" data-placement="top" title="Edit"
                                                              data-feather="edit"></i></a>
+                                                             <?php endif; ?>
+                                                     <?php if(in_array('viewUser', $user_permission)): ?>
                                                      <a href="<?php echo base_url('staff/view/');?><?= $staff->id;?>"><i
                                                              data-toggle="tooltip" data-placement="top" title="Edit"
                                                              data-feather="eye"></i></a>
+                                                             <?php endif; ?>
                                                             </td>
 
 

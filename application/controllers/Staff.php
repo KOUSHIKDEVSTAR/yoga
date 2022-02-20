@@ -14,7 +14,13 @@ class Staff extends Admin_Controller
 		$this->load->model('model_staff');
 		$this->load->library('image_lib');
 	}
-	
+	public function password_hash($pass = '')
+	{
+		if($pass) {
+			$password = password_hash($pass, PASSWORD_DEFAULT);
+			return $password;
+		}
+	}
 	public function index()
 	{
 		if(!in_array('createUser',  $this->permission) || !in_array('viewUser',  $this->permission)) {
@@ -43,6 +49,8 @@ class Staff extends Admin_Controller
 	public function store(){
 		$this->form_validation->set_rules('groups', 'Group', 'required');
 		$this->form_validation->set_rules('email', 'Email', 'trim|required|is_unique[users.email]');
+		$password = $this->password_hash(rand(111111,999999));
+
         if ($this->form_validation->run() == TRUE) {
 			if($_FILES['image']['name']==NULL)
 			{
@@ -93,7 +101,7 @@ class Staff extends Admin_Controller
 				'lastname'=>$this->input->post('last_name'),
 				'username'=>$this->input->post('email'),
 				'email'=>$this->input->post('email'),
-				'password' => rand(111111,999999),
+				'password' => $password,
 				'phone'=>$this->input->post('contact_number'),
 				'emp_ment_typ'=>$this->input->post('employement_type'),
 				'emp_docs'=>$docs,
@@ -133,6 +141,17 @@ class Staff extends Admin_Controller
 		$this->render_template('staff/edit',$this->data);
 
 	}
+	public function view($id){
+		if(!in_array('viewUser',  $this->permission)) {
+			redirect('dashboard', 'refresh');
+		}
+		$user_data = $this->model_staff->getUserById($id);
+    	$groups = $this->model_staff->getGroupData();
+    	$this->data['user_data'] = $user_data;
+    	$this->data['group_data'] = $groups;
+		$this->render_template('staff/view',$this->data);
+
+	}
 	public function update(){
 		$id = $this->input->post('id');
 		if($_FILES['employe_docs']['name']==NULL)
@@ -158,11 +177,12 @@ class Staff extends Admin_Controller
 			
 		}
 		$data = [
+			
 			'firstname'=>$this->input->post('first_name'),
 			'lastname'=>$this->input->post('last_name'),
 			'username'=>$this->input->post('email'),
 			'email'=>$this->input->post('email'),
-			'password' => rand(111111,999999),
+			
 			'phone'=>$this->input->post('contact_number'),
 			'emp_ment_typ'=>$this->input->post('employement_type'),
 			'emp_docs'=>$docs,

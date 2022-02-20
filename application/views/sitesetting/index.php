@@ -154,6 +154,7 @@
                 </div>
             </section>
             <!-- Basic Horizontal form layout section end -->
+
             <!-- Basic Horizontal form layout section start -->
             <section id="basic-horizontal-layouts">
                 <div class="row">

@@ -13,7 +13,7 @@ class Products extends Admin_Controller
 		$this->data['page_title'] = 'Products';
 
 		$this->load->model('model_products');
-		$this->load->model('model_brands');
+		$this->load->model('model_branch');
 		$this->load->model('model_category');
 		$this->load->model('model_stores');
 		$this->load->model('model_attributes');
@@ -145,7 +145,7 @@ class Products extends Admin_Controller
         	}
 
         	$this->data['attributes'] = $attributes_final_data;
-			$this->data['brands'] = $this->model_brands->getActiveBrands();        	
+			$this->data['brands'] = $this->model_branch->getActiveBranchs();        	
 			$this->data['category'] = $this->model_category->getActiveCategroy();        	
 			$this->data['stores'] = $this->model_stores->getActiveStore();        	
 
@@ -256,7 +256,7 @@ class Products extends Admin_Controller
             
             // false case
             $this->data['attributes'] = $attributes_final_data;
-            $this->data['brands'] = $this->model_brands->getActiveBrands();         
+            $this->data['brands'] = $this->model_branch->getActiveBranchs();         
             $this->data['category'] = $this->model_category->getActiveCategroy();           
             $this->data['stores'] = $this->model_stores->getActiveStore();          
 

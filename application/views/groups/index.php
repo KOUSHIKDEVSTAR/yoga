@@ -103,38 +103,38 @@
                                     <div class="col-12">
                                         <div class="card">
                                             <div class="box-body card-datatable table-responsive pt-0"">
-                                        <table id=" branchTable" class="user-list-table table">
-                                                <thead class="table-light">
-                                                    <tr>
-                                                        <th>Group Name</th>
-                                                        <?php if(in_array('updateGroup', $user_permission) || in_array('deleteGroup', $user_permission)): ?>
-                                                        <th>Action</th>
-                                                        <?php endif; ?>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <?php if($groups_data): ?>
-                                                    <?php foreach ($groups_data as $k => $v): ?>
-                                                    <tr>
-                                                        <td><?php echo $v['group_name']; ?></td>
+                                                <table id=" branchTable" class="user-list-table table">
+                                                    <thead class="table-light">
+                                                        <tr>
+                                                            <th>Group Name</th>
+                                                            <?php if(in_array('updateGroup', $user_permission) || in_array('deleteGroup', $user_permission)): ?>
+                                                            <th>Action</th>
+                                                            <?php endif; ?>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <?php if($groups_data): ?>
+                                                        <?php foreach ($groups_data as $k => $v): ?>
+                                                        <tr>
+                                                            <td><?php echo $v['group_name']; ?></td>
 
-                                                        <?php if(in_array('updateGroup', $user_permission) || in_array('deleteGroup', $user_permission)): ?>
-                                                        <td>
-                                                            <?php if(in_array('updateGroup', $user_permission)): ?>
-                                                            <a href="<?php echo base_url('groups/edit/'.$v['id']) ?>"
-                                                                class="btn btn-default"><i data-feather="edit"></i></a>
+                                                            <?php if(in_array('updateGroup', $user_permission) || in_array('deleteGroup', $user_permission)): ?>
+                                                            <td>
+                                                                <?php if(in_array('updateGroup', $user_permission)): ?>
+                                                                <a href="<?php echo base_url('groups/edit/'.$v['id']) ?>"
+                                                                    class="btn btn-default"><i data-feather="edit"></i></a>
+                                                                <?php endif; ?>
+                                                                <?php if(in_array('deleteGroup', $user_permission)): ?>
+                                                                <!-- <a href="<?php echo base_url('groups/delete/'.$v['id']) ?>"
+                                                                    class="btn btn-default"><i
+                                                                        data-feather="delete"></i></a> -->
+                                                                <?php endif; ?>
+                                                            </td>
                                                             <?php endif; ?>
-                                                            <?php if(in_array('deleteGroup', $user_permission)): ?>
-                                                            <!-- <a href="<?php echo base_url('groups/delete/'.$v['id']) ?>"
-                                                                class="btn btn-default"><i
-                                                                    data-feather="delete"></i></a> -->
-                                                            <?php endif; ?>
-                                                        </td>
+                                                        </tr>
+                                                        <?php endforeach ?>
                                                         <?php endif; ?>
-                                                    </tr>
-                                                    <?php endforeach ?>
-                                                    <?php endif; ?>
-                                                </tbody>
+                                                    </tbody>
                                                 </table>
                                             </div>
                                         </div>

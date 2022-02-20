@@ -68,4 +68,73 @@ class SiteSetting extends Admin_Controller
 
 	}
 
+	public function financial_expense(){
+		if(!in_array('createFinancial', $this->permission) || !in_array('updateFinancial', $this->permission) || !in_array('deleteFinancial', $this->permission)) {
+			redirect('dashboard', 'refresh');
+		}
+		$financial_data = $this->model_sitesettings->getFincialeData();
+		$tax_info = $this->model_sitesettings->getTaxInfoData();
+		$this->data['financial_data'] = $financial_data;
+		$this->data['tax_info'] = $tax_info;
+		$this->render_template('financial_expense/index', $this->data);	
+	}
+	public function financial_expense_add(){
+		if(!in_array('createFinancial', $this->permission) ) {
+			redirect('dashboard', 'refresh');
+		}
+		$site_data = $this->model_sitesettings->getsiteData();
+		$this->data['site_data'] = $site_data;
+
+		$this->render_template('financial_expense/add',$this->data);	
+	}
+	public function financial_expense_store(){
+		
+		$data = [
+			'type'=>$this->input->post('type'),
+			'name'=>$this->input->post('name'),
+		];
+		$result = $this->db->insert('financial_exp_master',$data);
+		if($result){
+			$this->session->set_flashdata('success','Added Financial Expense Successfully');
+			return redirect('sitesetting/financial_expense');
+
+		}else{
+			$this->session->set_flashdata('error','Fail To Add');
+			return redirect('sitesetting/financial_expense');
+
+
+		}
+
+	}
+	public function tax_info_add(){
+		if(!in_array('createFinancial', $this->permission) ) {
+			redirect('dashboard', 'refresh');
+		}
+		$site_data = $this->model_sitesettings->getsiteData();
+		$this->data['site_data'] = $site_data;
+
+		$this->render_template('financial_expense/add_tax',$this->data);
+
+	}
+
+	public function tax_store(){
+		$data = [
+			'template_name'=>$this->input->post('template_name'),
+			'tax_name'=>$this->input->post('tax_name'),
+			'percentage'=>$this->input->post('percentage'),
+			'applicable_on'=>$this->input->post('applicable_on'),
+		];
+		$result = $this->db->insert('tax_master',$data);
+		if($result){
+			$this->session->set_flashdata('success','Added Tax Info Successfully');
+			return redirect('sitesetting/financial_expense');
+
+		}else{
+			$this->session->set_flashdata('error','Fail To Add');
+			return redirect('sitesetting/financial_expense');
+
+
+		}
+
+	}
 }

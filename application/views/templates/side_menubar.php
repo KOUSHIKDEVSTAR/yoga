@@ -59,45 +59,79 @@
                            <i data-feather="home"></i> <span>Dashboard</span>
                        </a>
                    </li>
-                 
+
                    <li class="nav-item has-sub" id="AccountMainMenu"><a class="d-flex align-items-center" href="#"><i
                                data-feather="settings"></i><span class="menu-item text-truncate"
                                data-i18n="Account Settings">Account Settings</span></a>
                        <ul class="menu-content">
                            <?php if(in_array('updateProfile', $user_permission )) :?>
                            <li id="AccountMenu"><a class="d-flex align-items-center"
-                                   href="<?php echo base_url('users/setting/') ?>"><i data-feather="trello"></i><span class="menu-item text-truncate"
-                                       data-i18n="Account">Account</span></a>
+                                   href="<?php echo base_url('users/setting/') ?>"><i data-feather="trello"></i><span
+                                       class="menu-item text-truncate" data-i18n="Account">Account</span></a>
                            </li>
                            <?php endif; ?>
                            <?php if(in_array('updateSetting', $user_permission )) :?>
-                           <li id="siteSetting"><a class="d-flex align-items-center" href="<?php echo base_url('siteSetting') ?>"> <i data-feather="settings"></i> <span class="menu-item text-truncate" data-i18n="Security">Site Settings</span></a>
+                           <li id="siteSetting"><a class="d-flex align-items-center"
+                                   href="<?php echo base_url('siteSetting') ?>"> <i data-feather="settings"></i> <span
+                                       class="menu-item text-truncate" data-i18n="Security">Site Settings</span></a>
                            </li>
                            <?php endif; ?>
                            <?php if(in_array('createGroup', $user_permission )) :?>
-                           <li id="RolesMenu"><a class="d-flex align-items-center" href="<?php echo base_url('groups') ?>"><i data-feather="cpu"></i><span class="menu-item text-truncate" data-i18n="Billings &amp; Plans">Roles</span></a>
+                           <li id="RolesMenu"><a class="d-flex align-items-center"
+                                   href="<?php echo base_url('groups') ?>"><i data-feather="cpu"></i><span
+                                       class="menu-item text-truncate" data-i18n="Billings &amp; Plans">Roles</span></a>
                            </li>
                            <?php endif; ?>
-                           
-                            <?php if(in_array('createUser', $user_permission ) || in_array('updateUser', $user_permission ) || in_array('deleteUser', $user_permission ) || in_array('viewUser')) :?>
-                               <li class=" nav-item" id="RolesStaff">
-                                   <a href="<?php echo base_url('staff') ?>">
-                                   <i data-feather="users"></i><span class="menu-item text-truncate" data-i18n="Billings &amp; Plans">Staff</span>
-                                   </a>
-                               </li>
-                            <?php endif; ?>
-                            <?php if(in_array('createBranch', $user_permission ) || in_array('updateBranch', $user_permission ) || in_array('deleteBranch', $user_permission )) :?>
-                               <li class=" nav-item" id="RolesBranch">
-                                   <a href="<?php echo base_url('branch') ?>">
-                                   <i data-feather="git-branch"></i><span class="menu-item text-truncate" data-i18n="Billings &amp; Plans">Branch</span>
-                                   </a>
-                               </li>
-                            <?php endif; ?>
+
+                           <?php if(in_array('createUser', $user_permission ) || in_array('updateUser', $user_permission ) || in_array('deleteUser', $user_permission ) || in_array('viewUser')) :?>
+                           <li class=" nav-item" id="RolesStaff">
+                               <a href="<?php echo base_url('staff') ?>">
+                                   <i data-feather="users"></i><span class="menu-item text-truncate"
+                                       data-i18n="Billings &amp; Plans">Staff</span>
+                               </a>
+                           </li>
+                           <?php endif; ?>
+                           <?php if(in_array('createBranch', $user_permission ) || in_array('updateBranch', $user_permission ) || in_array('deleteBranch', $user_permission )) :?>
+                           <li class=" nav-item" id="RolesBranch">
+                               <a href="<?php echo base_url('branch') ?>">
+                                   <i data-feather="git-branch"></i><span class="menu-item text-truncate"
+                                       data-i18n="Billings &amp; Plans">Branch</span>
+                               </a>
+                           </li>
+                           <?php endif; ?>
+                           <?php if(in_array('createFinancial', $user_permission ) || in_array('updateFinancial', $user_permission ) || in_array('viewFinancial', $user_permission )) :?>
+                           <li class=" nav-item" id="RolesExpense">
+                               <a href="<?php echo base_url('siteSetting/financial_expense') ?>">
+                                   <i data-feather="git-branch"></i><span class="menu-item text-truncate"
+                                       data-i18n="Billings &amp; Plans">Financial Expense</span>
+                               </a>
+                           </li>
+                           <?php endif; ?>
 
 
 
                        </ul>
                    </li>
+
+                   <?php if(in_array('createProduct', $user_permission) || in_array('updateProduct', $user_permission) || in_array('viewProduct', $user_permission) || in_array('deleteProduct', $user_permission)): ?>
+                   <li class="nav-item has-sub"  id="mainProductNav">
+                       <a href="#">
+                           <i data-feather="git-branch"></i>
+                           <span>Products</span>
+                           
+                       </a>
+                       <ul class="treeview-menu">
+                           <?php if(in_array('createProduct', $user_permission)): ?>
+                           <li id="addProductNav"><a href="<?php echo base_url('products/create') ?>"><i
+                                       class="fa fa-circle-o"></i> Add Product</a></li>
+                           <?php endif; ?>
+                           <?php if(in_array('updateProduct', $user_permission) || in_array('viewProduct', $user_permission) || in_array('deleteProduct', $user_permission)): ?>
+                           <li id="manageProductNav"><a href="<?php echo base_url('products') ?>"><i
+                                       class="fa fa-circle-o"></i> Manage Products</a></li>
+                           <?php endif; ?>
+                       </ul>
+                   </li>
+                   <?php endif; ?>
 
                </ul>
                <?php endif; ?>

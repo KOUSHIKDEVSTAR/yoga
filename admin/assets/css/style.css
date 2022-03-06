@@ -1,0 +1,110 @@
+/*================================================================================
+	Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+	Version: 2.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+================================================================================
+
+NOTE:
+------
+PLACE HERE YOUR OWN SCSS CODES AND IF NEEDED, OVERRIDE THE STYLES FROM THE OTHER STYLESHEETS.
+WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BETTER LIKE THIS.  */
+
+header .header-logo a.brand-logo {display: flex; align-items: center; }
+header .header-btms ul {padding: 0; margin: 0; }
+header .header-btms ul {text-align: right;}
+header .header-btms ul li {list-style: none;display: inline-block;display: inline-grid; margin-left: 14px;}
+header .header-btms ul li a {padding: 13px 30px; border-radius: 5px;color: #fff;font-weight: 700;text-transform: uppercase;font-size: 16px;}
+header .header-btms ul li:first-child{margin-left: 0px;}
+header .header-btms ul li:first-child a{background-color: #b7b1fb;}
+header .header-btms ul li:nth-child(2) a{background-color: #69e09e;}
+header .header-btms ul li:nth-child(3) a{background-color: #6fd9e6;}
+header.custome-header {padding: 15px; }
+header .header-btms ul li:first-child a:hover {box-shadow: 0 10px 10px #b7b1fbab; }
+header .header-btms ul li:nth-child(2) a:hover {box-shadow: 0 10px 10px #69e09e9c; }
+header .header-btms ul li:nth-child(3) a:hover {box-shadow: 0 10px 10px #6fd9e694; }
+
+/*not need*/
+.banner-section {text-align: center; }
+.banner-section {text-align: center; padding: 50px;min-height: 950px;}
+/*not need*/
+
+footer.custome-footer{background-color: #6359c7;}
+footer.custome-footer p {margin: 0; text-align: center; color: #fff;padding: 10px;font-size: 15px; }
+
+
+
+
+/*Media Query css*/
+
+@media only screen and ( min-width:1600px ) {
+
+
+
+
+
+
+}
+@media only screen and ( max-width:1599px ) {
+
+
+
+
+
+
+
+
+
+}
+@media only screen and ( max-width:1200px ) {
+
+
+
+
+}
+@media only screen and ( max-width: 991px ) {
+footer.custome-footer {display: none; }
+header .header-logo a.brand-logo {justify-content: center; }
+header .header-btms ul li {display: block;}
+header .header-btms ul {display: flex; justify-content: space-between; align-items: center; }
+header .header-btms {position: fixed; width: 100%; right: 0; padding: 0 10px; bottom: 12px; }
+.banner-section {padding: 0; min-height: auto; }
+
+
+
+}
+@media only screen and ( max-width: 767px ) {
+
+
+
+}
+@media only screen and ( max-width: 575px ) {
+	header .header-btms ul li a {padding: 9px 20px;border-radius: 3px;font-size: 14px;}
+	header .header-btms {bottom: 8px;}
+	header .header-btms ul li a {padding: 9px 17px;}
+
+
+
+
+
+
+}
+@media only screen and ( max-width: 380px ) {
+
+
+
+}
+
+/*Media Query css*/
+
+
+
+
+
+
+
+
+
+
+
+

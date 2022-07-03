@@ -7,6 +7,68 @@
             <div class="content-body">
                 <section class="invoice-list-wrapper">
                     <div class="row">
+                        <div class="col-lg-3 col-sm-6 col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div>
+                                        <h2 class="fw-bolder mb-0">Rs : <?=$total_sell_cost;?></h2>
+                                        <p class="card-text">Sales - Monthly</p>
+                                    </div>
+                                    <div class="avatar bg-light-primary p-50 m-0">
+                                        <div class="avatar-content">
+                                            <i data-feather="cpu" class="font-medium-5"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div>
+                                        <h2 class="fw-bolder mb-0"><?= $all_customer_count[0]->all_count;?></h2>
+                                        <p class="card-text">New Customer</p>
+                                    </div>
+                                    <div class="avatar bg-light-success p-50 m-0">
+                                        <div class="avatar-content">
+                                            <i data-feather="server" class="font-medium-5"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div>
+                                        <h2 class="fw-bolder mb-0">Rs : <?=$total_duecost;?></h2>
+                                        <p class="card-text">Not Received</p>
+                                    </div>
+                                    <div class="avatar bg-light-danger p-50 m-0">
+                                        <div class="avatar-content">
+                                            <i data-feather="activity" class="font-medium-5"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div>
+                                        <h2 class="fw-bolder mb-0"><?= round($mom);?>%</h2>
+                                        <p class="card-text">Growth - MOM</p>
+                                    </div>
+                                    <div class="avatar bg-light-warning p-50 m-0">
+                                        <div class="avatar-content">
+                                            <i data-feather="alert-octagon" class="font-medium-5"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-body"> 
@@ -55,19 +117,21 @@
                                     <table class="user-list-table table">
                                         <thead>
                                             <tr>
-                                                <th>#</th>
+                                                <th>SL No.</th>
+                                                <th>Invoice</th>
                                                 <th><i data-feather="trending-up"></i></th>
                                                 <th>Customer</th>
                                                 <th>Total</th>
                                                 <th class="text-truncate">Issued Date</th>
                                                 <th>Balance</th>
                                           
-                                                <th class="cell-fit">Actions</th>
+                                                
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php foreach($sales_details as $sales){?>
+                                            <?php $i=1; foreach($sales_details as $sales){?>
                                                 <tr>
+                                                    <td><?= $i ?></td>
                                                     <td><a href="<?= base_url('sales/invoice_preview/');?><?= $sales->sale_id;?>">#<?= $sales->invoice_no;?></a></td>
                                                     <td></td>
                                                     <td><img src="<?= base_url('uploads/customer_details/');?><?= $sales->pr_image;?>" height="32" width="32" style="border-radius: 50%;"><h6 class="user-name text-truncate mb-0"><?= $sales->full_name;?></h6>
@@ -87,7 +151,7 @@
 
                                                 </tr>
 
-                                            <?php } ?>
+                                            <?php $i++; } ?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -102,3 +166,9 @@
             </div>
         </div>
     </div>
+
+<script type="text/javascript">
+$(document).ready(function() {  
+    $("#saleslist").addClass('active');
+});
+</script>

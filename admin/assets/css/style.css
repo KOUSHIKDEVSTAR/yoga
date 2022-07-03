@@ -1,43 +1,215 @@
-/*================================================================================
-	Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-	Version: 2.0
-	Author: PIXINVENT
-	Author URL: http://www.themeforest.net/user/pixinvent
 ================================================================================
 
+	Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+
+	Version: 2.0
+
+	Author: PIXINVENT
+
+	Author URL: http://www.themeforest.net/user/pixinvent
+
+================================================================================
+
+
+
 NOTE:
+
 ------
+
 PLACE HERE YOUR OWN SCSS CODES AND IF NEEDED, OVERRIDE THE STYLES FROM THE OTHER STYLESHEETS.
-WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BETTER LIKE THIS.  */
+
+WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BETTER LIKE THIS.  
+
+/*common-class*/
+
+
+
 
 header .header-logo a.brand-logo {display: flex; align-items: center; }
 header .header-btms ul {padding: 0; margin: 0; }
-header .header-btms ul {text-align: right;}
-header .header-btms ul li {list-style: none;display: inline-block;display: inline-grid; margin-left: 14px;}
-header .header-btms ul li a {padding: 13px 30px; border-radius: 5px;color: #fff;font-weight: 700;text-transform: uppercase;font-size: 16px;}
-header .header-btms ul li:first-child{margin-left: 0px;}
-header .header-btms ul li:first-child a{background-color: #b7b1fb;}
-header .header-btms ul li:nth-child(2) a{background-color: #69e09e;}
-header .header-btms ul li:nth-child(3) a{background-color: #6fd9e6;}
+header .header-btms ul {text-align: right; }
+header .header-btms ul li {list-style: none; display: inline-block; display: inline-grid; margin-left: 14px; }
+header .header-btms ul li a {padding: 13px 30px; border-radius: 5px; color: #000; font-weight: 700; text-transform: uppercase; font-size: 16px; }
+header .header-btms ul li:last-child a {background-color: #6fd9e6; color: #fff !important; }
 header.custome-header {padding: 15px; }
-header .header-btms ul li:first-child a:hover {box-shadow: 0 10px 10px #b7b1fbab; }
-header .header-btms ul li:nth-child(2) a:hover {box-shadow: 0 10px 10px #69e09e9c; }
-header .header-btms ul li:nth-child(3) a:hover {box-shadow: 0 10px 10px #6fd9e694; }
+header .header-btms ul li:last-child a:hover {box-shadow: 0 10px 10px #6fd9e694; }
+.custom-misc-wrapper {min-height: 1000px; }
+.custom-misc-wrapper .card {box-shadow: none;}
+html body {background-color: #ffffff !important;}
+.app-content.custom-app-content {padding-top: 15px !important; }
+header .header-btms ul li a span.icon {display: none;}
+
+.custom-misc-wrapper .btn-medium-icon svg {width: 20px; height: 20px; color: #7367f0; }
+.custom-misc-wrapper .btn-medium-icon {float: left; padding-left: 27px; }
+
+.custom-misc-wrapper button#mup,
+.custom-misc-wrapper button#yup {width: 30px;border: none !important; }
+.custom-misc-wrapper button#mdown,
+.custom-misc-wrapper button#ydown {width: 30px;border: none !important; }
+.custom-misc-wrapper div#month_container,
+.custom-misc-wrapper div#year_container {display: flex; }
+
+.custom-misc-wrapper #picker_container {justify-content: right;}
+.custom-misc-wrapper .top-wraper {display: flex; align-items: center; justify-content: space-between !important;margin-bottom: 15px;}
+.custom-misc-wrapper .branch select#cars {height: 40px; width: 149px; border: 1px solid #7367f04d; background: transparent; border-radius: 4px; color: #000 !important; font-weight: 600; }
+
+.div-use-minhight {min-height: 1080px; }
+.custom-card {flex-direction: row; align-items: center; padding: 20px 0px; }
+.custom-card .img-wp img {width: 100%; height: 100%; object-fit: cover; }
+.custom-card .img-wp {height: 215px; overflow: hidden; }
+
+.app-user-view-account .info-container .btn-wraper {display: flex; justify-content: center; }
+.app-user-view-account .info-container .btn-wraper a.btn.btn-primary.me-1.btn-logout.waves-effect.waves-float.waves-light {background-color: #f5745c !important; border-color: #f5745c !important; }
+
+/*header.custome-header.fixed {z-index: 99; background-color: #fff; box-shadow: 0 10px 10px #6359c729; position: fixed; top: 0; width:100%;  transition: all 0.5s; -ms-transition: all 0.5s; -webkit-transition: all 0.5s; animation: slide-down 0.7s; -ms-animation: slide-down 0.7s; -webkit-animation: slide-down 0.7s;}
+
+@keyframes slide-down { 
+
+0% {transform: translateY(-100%); 
+-moz-transform: translateY(-100%); 
+-webkit-transform: translateY(-100%); 
+-o-transform: translateY(-100%);
+-ms-transform: translateY(-100%); } 
+100% { 
+transform: translateY(0); 
+-moz-transform: translateY(0); 
+-webkit-transform: translateY(0); 
+-o-transform: translateY(0); 
+-ms-transform: translateY(0); } 
+}*/
+
+.custome-header a.brand-logo {display: flex; align-items: center; }
+.booking-content .btn-booking {display: flex; align-items: center; }
+.booking-content .btn-booking .check-booked {margin-right: 15px; } .booking-content .check-booked span svg {color: #15ac4f; width: 16px; height: 16px; }
+.booking-content .check-booked span {margin-right: 5px; }
+.booking-content .check-booked {color: #15ac4f;}
+
+.profile-content ul.list-unstyled {border-top: 1px solid #00000029; padding-top: 15px; margin-top: 15px; }
+.profile-content .dataTables_length,
+.profile-content .dataTables_filter {display: none;}
+.app-content.content.profile-content {padding-bottom: 80px !important;}
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*not need*/
+
 .banner-section {text-align: center; }
-.banner-section {text-align: center; padding: 50px;min-height: 950px;}
+.banner-section {text-align: center; padding: 50px; min-height: 950px; }
+
 /*not need*/
 
-footer.custome-footer{background-color: #6359c7;}
-footer.custome-footer p {margin: 0; text-align: center; color: #fff;padding: 10px;font-size: 15px; }
+footer.custome-footer {background-color: #6359c7; }
+footer.custome-footer p {margin: 0; text-align: center; color: #fff; padding: 10px; font-size: 15px; }
+
+
+
+
+
+
+
+
+
 
 
 
 
 /*Media Query css*/
 
-@media only screen and ( min-width:1600px ) {
+
+@media only screen and ( min-width:1600px) {
+.container {max-width: 1440px !important;}
+
+
+}
+
+@media only screen and ( max-width:1599px) {
+    header .header-btms ul li a {padding: 13px 22px;font-size: 13px;}
+
+}
+
+@media only screen and ( max-width:1200px) {
+    header .header-btms ul li a {padding: 8px 15px; font-size: 11px;}
+
+
+
+
+
+}
+@media only screen and ( max-width: 991px) {
+    footer.custome-footer {display: none; }
+    header .header-logo a.brand-logo {justify-content: center; }
+    header .header-btms ul li {display: block; }
+    header .header-btms ul {display: flex; justify-content: space-between; align-items: center; }
+    header .header-btms {position: fixed; width: 100%; right: 0; padding: 10px 10px; bottom: 0 !important; z-index: 9; background-color: #ffffff; box-shadow: 0 -4px 10px #7367f026; }
+    .banner-section {padding: 0; min-height: auto; }
+    header .header-btms ul li a {display: block;}
+    header .header-btms ul li a span.icon {display: block;}
+    header .header-btms ul li a span.text {display: none;}
+    header .header-btms ul li .icon svg {height: 1.8rem !important;width: 1.8rem !important;color: #7367f0 !important;}
+    header .header-btms ul li:last-child a {background-color: #6fd9e600;}
+    .custom-misc-wrapper .btn-medium-icon {padding-left: 0;margin-top: 10px;}
+    .custom-misc-wrapper .btn-booking {float: right;}
+    .custom-misc-wrapper .top-wraper {display: block;}
+    .custom-misc-wrapper .branch select#cars {width: 100%;}
+    .custom-misc-wrapper button#mup,
+    .custom-misc-wrapper button#yup {width: 20px;}
+    .custom-misc-wrapper button#mdown,
+    .custom-misc-wrapper button#ydown {width: 20px;}
+    .custom-misc-wrapper .top-wraper {margin-bottom: 0;}
+    .div-use-minhight {min-height: 700px; }
+    .custom-card .img-wp {height: 400px;}
+    .header-logo-wraper {text-align: center;}
+    .margn-top-small{margin-top: 15px !important;}
+    header .header-btms ul li:last-child a:hover {box-shadow: none;}
+
+
+
+
+
+}
+
+@media only screen and ( max-width: 767px) {
+    .app-content.custom-app-content {padding-top: 15px !important;}
+    .custom-misc-wrapper .card-body ul {padding: 0; }
+    .custom-misc-wrapper .card-body .btn-booking {position: relative; text-align: right; right: 0;}
+    .custom-misc-wrapper .card-body .btn-booking a.btn.btn-primary {width: unset !important;}
+    .margn-top-small{margin-top: 15px !important;}
+    html body .app-content {padding-bottom: 80px !important;padding-top: 15px !important;}
+
+
+
+
+
+}
+@media only screen and ( max-width: 575px) {
+    header .header-btms ul li a {padding: 9px 20px; border-radius: 3px; font-size: 14px; }
+    header .header-btms {bottom: 8px; }
+    header .header-btms ul li a {padding: 9px 17px; }
+    .app-content.custom-app-content {padding-left: 0 !important;padding-right: 0 !important;}
+    .misc-wrapper.custom-misc-wrapper.container-xxl {padding: 0;}
+    .custom-misc-wrapper #picker_container {justify-content: space-between;}
+    .custom-card .img-wp {height: 215px;}
+    .cart-both-btn {display: flex;justify-content: space-between;align-items: center;}
+    
+    .app-content.content.login-page {padding-bottom: 50px; }
+    .app-content.content.login-page .p-5 {padding: 0rem !important; }
+    .app-content.content.login-page img.img-fluid {margin-bottom: 35px; }
+    .auth-wrapper.auth-cover .auth-inner {height: calc(var(--vh, 1vh) * 70) !important;}
+    .app-content.content.profile-content {padding-left: 0 !important; padding-right: 0 !important;}
+    .app-content.custom-mobile-no-pd.booking-content {padding: 0 !important;}
+
+
+
 
 
 
@@ -45,66 +217,7 @@ footer.custome-footer p {margin: 0; text-align: center; color: #fff;padding: 10p
 
 
 }
-@media only screen and ( max-width:1599px ) {
+@media only screen and ( max-width: 380px) {}
 
 
-
-
-
-
-
-
-
-}
-@media only screen and ( max-width:1200px ) {
-
-
-
-
-}
-@media only screen and ( max-width: 991px ) {
-footer.custome-footer {display: none; }
-header .header-logo a.brand-logo {justify-content: center; }
-header .header-btms ul li {display: block;}
-header .header-btms ul {display: flex; justify-content: space-between; align-items: center; }
-header .header-btms {position: fixed; width: 100%; right: 0; padding: 0 10px; bottom: 12px; }
-.banner-section {padding: 0; min-height: auto; }
-
-
-
-}
-@media only screen and ( max-width: 767px ) {
-
-
-
-}
-@media only screen and ( max-width: 575px ) {
-	header .header-btms ul li a {padding: 9px 20px;border-radius: 3px;font-size: 14px;}
-	header .header-btms {bottom: 8px;}
-	header .header-btms ul li a {padding: 9px 17px;}
-
-
-
-
-
-
-}
-@media only screen and ( max-width: 380px ) {
-
-
-
-}
-
-/*Media Query css*/
-
-
-
-
-
-
-
-
-
-
-
-
+/*Media Query css

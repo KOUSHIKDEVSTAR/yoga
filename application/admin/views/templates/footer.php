@@ -7,7 +7,7 @@
             2018-<?php echo date('Y') ?></span><span class="float-md-end d-none d-md-block">Hand-crafted & Made with<i
                 data-feather="heart"></i></span></p>
 </footer>
-<button class="btn btn-primary btn-icon scroll-top" type="button"><i data-feather="arrow-up"></i></button>
+<!-- <button class="btn btn-primary btn-icon scroll-top" type="button"><i data-feather="arrow-up"></i></button> -->
 <!-- END: Footer-->
 
 
@@ -34,6 +34,10 @@ CKEDITOR.replace('classic-editor');
 
 <!-- BEGIN: Page Vendor JS-->
 <script src="<?php echo base_url(); ?>app-assets/vendors/js/charts/apexcharts.min.js"></script>
+
+<!-- <script src="<?php echo base_url(); ?>app-assets/vendors/js/charts/chart.min.js"></script>
+<script src="<?php echo base_url(); ?>app-assets/vendors/js/charts/apexcharts.js"></script> -->
+
 <script src="<?php echo base_url(); ?>app-assets/vendors/js/extensions/toastr.min.js"></script>
 <script src="<?php echo base_url(); ?>app-assets/vendors/js/extensions/moment.min.js"></script>
 <script src="<?php echo base_url(); ?>app-assets/vendors/js/tables/datatable/jquery.dataTables.min.js"></script>

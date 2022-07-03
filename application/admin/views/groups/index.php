@@ -1,5 +1,5 @@
 <!-- BEGIN: Content-->
-<div class="app-content content ">
+<div class="app-content content profile-page-content">
     <div class="content-overlay"></div>
     <div class="header-navbar-shadow"></div>
     <div class="content-wrapper container-xxl p-0">
@@ -50,7 +50,13 @@
                     <!-- profile -->
                     <div class="card">
                         <div class="card-header border-bottom">
-                            <h4 class="card-title">Manage Roles</h4>
+                            <h4 class="card-title">Manage Roles
+                            <?php if(in_array('createGroup', $user_permission)): ?>
+                            <a href="<?php echo base_url('groups/create') ?>" class="btn btn-primary">Add Group</a>
+                           
+                            <?php endif; ?>
+                            </h4>
+                            
                         </div>
                         <div class="card-body py-2 my-25">
                             <!-- header section -->
@@ -92,10 +98,7 @@
 
                             <?php endif; ?>
 
-                            <?php if(in_array('createGroup', $user_permission)): ?>
-                            <a href="<?php echo base_url('groups/create') ?>" class="btn btn-primary">Add Group</a>
-                            <br /> <br />
-                            <?php endif; ?>
+                            
 
                             <!-- Row grouping -->
                             <section id="row-grouping-datatable">

@@ -60,13 +60,16 @@
                 <div class="row">
                     <div class="col-md-12 col-12">
                         <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">ModeList Details</h4>
-                            </div>
-                            <div class="container">
+                            <div class="card-body border-bottom">
+                                <h4 class="card-title">ModeList Details
                                 <?php if(in_array('createProduct', $user_permission)) :?>
                                 <a href="<?= base_url('products/modelist_add');?>"><button type="button" class="btn btn-primary">Add</button></a>
                             <?php endif;?>
+                                </h4>
+                                
+                            </div>
+                            <div class="container">
+                                
                             </div>
                             
                             

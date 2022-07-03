@@ -38,7 +38,7 @@
                                                         </g>
                                                     </g>
                                                 </svg>
-                                                <h3 class="text-primary invoice-logo">Vuexy</h3>
+                                                <h3 class="text-primary invoice-logo">FitPlus </h3>
                                             </div>
                                             <p class="card-text mb-25">Office 149, 450 South Brand Brooklyn</p>
                                             <p class="card-text mb-25">San Diego County, CA 91905, USA</p>
@@ -107,10 +107,10 @@
                                     </div>
                                 </div>
                                 <!-- Address and Contact ends -->
-
+                              
                                 <!-- Invoice Description starts -->
                                 <div class="table-responsive">
-                                    <table class="table">
+                                    <table class="custom-table">
                                         <thead>
                                             <tr>
                                                 <th class="py-1">Product Name</th>
@@ -152,11 +152,8 @@
                                 <div class="card-body invoice-padding pb-0">
                                     <div class="row invoice-sales-total-wrapper">
                                         <div class="col-md-6 order-md-1 order-2 mt-md-0 mt-3">
-                                            <!-- <p class="card-text mb-0">
-                                                <span class="fw-bold">Salesperson:</span> <span class="ms-75">Alfie Solomons</span>
-                                            </p> -->
                                         </div>
-                                        <div class="col-md-6 d-flex justify-content-end order-md-2 order-1">
+                                        <div class="col-md-6 justify-content-end order-md-2 order-1">
                                             <div class="invoice-total-wrapper">
                                                 <div class="invoice-total-item">
                                                     <p class="invoice-total-title">Subtotal:</p>
@@ -212,7 +209,7 @@
                                         Send Invoice
                                     </button>
                                     <button class="btn btn-outline-secondary w-100 btn-download-invoice mb-75">Download</button>
-                                    <a class="btn btn-outline-secondary w-100 mb-75" href="<?= base_url('sales/invoice_print');?>" target="_blank"> Print </a>
+                                    <a class="btn btn-outline-secondary w-100 mb-75" href="<?= base_url('sales/invoice_print/');?><?= $sales_details[0]->sale_id ;?>" target="_blank"> Print </a>
                                     <a class="btn btn-outline-secondary w-100 mb-75" href=""> Edit </a>
                                     <?php if($sales_details[0]->due_amt > 0){?>
                                         <button class="btn btn-success w-100" data-bs-toggle="modal" data-bs-target="#add-payment-sidebar">
@@ -338,3 +335,8 @@
             </div>
         </div>
     </div>
+<script type="text/javascript">
+$(document).ready(function() {  
+    $("#saleslist").addClass('active');
+});
+</script>

@@ -11,16 +11,18 @@
                      <div class="col-12">
                          <div class="card">
                              <div class="card-body border-bottom">
-                                 <h4 class="card-title">Customer Details</h4>
+                                 <h4 class="card-title">Customer Details
+                                     <?php if(in_array('createCustomer', $user_permission)): ?>
+                                     <a href="<?php echo base_url('customers/add');?>"><button type="button"
+                                             class="btn btn-primary" data-bs-toggle="" data-bs-target="">Add
+                                             Customer</button>
+                                     </a>
+                                     <?php endif; ?>
+                                 </h4>
 
                                  <div class="row">
                                      <div class="col-md-12">
-                                     <?php if(in_array('createCustomer', $user_permission)): ?>
-                                         <a href="<?php echo base_url('customers/add');?>"><button type="button"
-                                                 class="btn btn-primary" data-bs-toggle="" data-bs-target="">Add
-                                                 Customer</button>
-                                         </a>
-                                         <?php endif; ?>
+
                                          <?php if($this->session->flashdata('success')): ?>
                                          <div class="demo-spacing-0">
                                              <div class="alert alert-primary alert-dismissible fade show" role="alert">
@@ -60,10 +62,10 @@
                                          <thead class="table-light">
                                              <tr>
                                                  <th>#</th>
-                                                 <th>Customer Image</th>
+                                                 <!-- <th>Image</th> -->
                                                  <th>Name</th>
-                                                 <th>Email</th>
-                                                 <th>Mobile Number</th>
+                                                 <!-- <th>Email</th> -->
+                                                 <th>Contact</th>
                                                  <th>Branch</th>
                                                  <th>Joined Date</th>
                                                  <th>Actions</th>
@@ -78,36 +80,40 @@
                                             ?>
                                              <tr>
                                                  <td><?= $i;?></td>
-                                                 <td>
+                                                 <!-- <td>
                                                     <img class="img-fluid"
                                                          src="<?php echo  base_url('uploads/customer_details/');?><?=$value->pr_image;?>"
-                                                         style="width: 100px;height: 80px;"></td>
-                                                 <td><?= $value->full_name;?></td>
-                                                 <td><?= $value->email;?></td>
+                                                         style="width: 100px;height: 80px;"></td> -->
+                                                 <td>
+                                                     <div class="d-flex justify-content-left align-items-center">
+                                                         <div class="avatar-wrapper">
+                                                             <div class="avatar me-50"><img
+                                                                     src="<?php echo  base_url('uploads/customer_details/');?><?=$value->pr_image;?>"
+                                                                     alt="Avatar" width="32" height="32"></div>
+                                                         </div>
+                                                         <div class="d-flex flex-column">
+                                                             <h6 class="user-name text-truncate mb-0"><?= $value->full_name;?></h6>
+                                                             <small
+                                                                 class="text-truncate text-muted"><?= $value->email;?></small>
+                                                         </div>
+                                                     </div
+                                                 </td>
+                                                 <!-- <td><?= $value->email;?></td> -->
                                                  <td><?= $value->mobile_number;?></td>
                                                  <td><?= $value->name;?></td>
-                                                 
+
                                                  <td><?= $value->created_at;?></td>
-                                                
+
 
                                                  <td>
-                                                    <?php if(in_array('viewCustomer', $user_permission )) :?>
-                                                     <a href="<?php echo base_url('customers/view/');?><?= $value->cust_id;?>"><i data-toggle="tooltip" data-placement="top" title="Edit"
-                                                             data-feather="eye"></i></a>
-                                                             
-                                                    <?php endif; ?>
-                                                    <?php if( in_array('updateCustomer', $user_permission )) :?>
-
-                                                     <a href="<?php echo base_url('customers/edit/');?><?= $value->cust_id;?>"><i
+                                                     <?php if(in_array('viewCustomer', $user_permission )) :?>
+                                                     <a
+                                                         href="<?php echo base_url('customers/view/');?><?= $value->cust_id;?>"><i
                                                              data-toggle="tooltip" data-placement="top" title="Edit"
-                                                             data-feather="edit"></i></a>
-                                                             
-                                                    <?php endif; ?>
-                                                    <?php if( in_array('deleteCustomer', $user_permission )) :?>
-                                                     <a onclick="return confirm('Are you sure you want to delete this?')" href="<?php echo base_url('customers/delete/');?><?= $value->cust_id;?>"><i
-                                                             data-toggle="tooltip" data-placement="top" title="Delete"
-                                                             data-feather="delete"></i></a>
-                                                           <?php endif; ?>  
+                                                             data-feather="eye"></i></a>
+
+                                                     <?php endif; ?>
+                                                    
                                                  </td>
 
 
@@ -133,7 +139,7 @@
  </div>
  <script type="text/javascript">
 $(document).ready(function() {
-    
+
     $("#customersList").addClass('active');
 
 });

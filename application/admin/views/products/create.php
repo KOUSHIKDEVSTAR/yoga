@@ -12,15 +12,17 @@
                  <!-- list and filter start -->
                  <div class="card">
                      <div class="card-body border-bottom">
-                         <h4 class="card-title">Add Product Details</h4>
+                         <h4 class="card-title">Add Product Details
+                         <a href="<?php echo base_url('products');?>"><button type="button"
+                                         class="btn btn-primary" data-bs-toggle="" data-bs-target="">View
+                                     </button>
+                                 </a>
+                         </h4>
 
                          <div class="row">
                              <div class="col-md-12">
 
-                                 <a href="<?php echo base_url('products');?>"><button type="button"
-                                         class="btn btn-primary" data-bs-toggle="" data-bs-target="">View
-                                     </button>
-                                 </a>
+                                 
 
                              </div>
                          </div>

@@ -14,18 +14,20 @@
             <div class="content-header-left col-md-9 col-12 mb-2">
                 <div class="row breadcrumbs-top">
                     <div class="col-12">
-                        <h2 class="content-header-title float-start mb-0">Manage Product</h2>
+                        <div class="card-body border-bottom">
+                            <h2 class="content-header-title float-start mb-0">Manage Product</h2>
+                            <?php if(in_array('createProduct', $user_permission)): ?>
+                            <a href="<?php echo base_url('products/add') ?>" class="btn btn-primary">Add Product</a>
 
+                            <?php endif; ?>
+                        </div>
                     </div>
                 </div>
             </div>
 
         </div>
 
-        <?php if(in_array('createProduct', $user_permission)): ?>
-        <a href="<?php echo base_url('products/add') ?>" class="btn btn-primary">Add Product</a>
-        <br /> <br />
-        <?php endif; ?>
+
         <div class="content-body">
             <!-- Wishlist Starts -->
             <section id="wishlist" class="grid-view wishlist-items">

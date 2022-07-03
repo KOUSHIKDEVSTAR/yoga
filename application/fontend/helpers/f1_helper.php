@@ -1,19 +1,27 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
+
+
 function send_email($emails, $subject, $message)
+
 {
 
-   $ci = &get_instance();
+
+
+   $ci = & get_instance();
    $ci->load->library('phpmailer_lib');
    $mail = $ci->phpmailer_lib->load();
    $mail->isSMTP();
-   $mail->Host     = 'smtp.hostinger.in';
+   $mail->Host     = 'smtp.sendgrid.net';
    $mail->SMTPAuth = true;
-   $mail->Username = 'infosupport@adds2cart.com';
-   $mail->Password = 'Admin!@#$1234';
-   $mail->SMTPSecure = 'tls';
-   $mail->Port     = 587;
-   $mail->setFrom('infosupport@adds2cart.com', 'Admin');
+   $mail->Username = 'apikey';
+   $mail->Password = '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';
+   $mail->SMTPSecure = 'TLS';
+   $mail->Port     = 587 ;
+   $mail->IsSMTP(); // enable SMTP
+   $mail->SMTPDebug = 2;  // debugging: 1 = errors and messages, 2 = messages only
+   $mail->SMTPAutoTLS = false;
+   $mail->setFrom('info@mykkon.com', 'Admin');
    $mail->Subject = $subject;
    $mail->isHTML(true);
    $mailContent = $message;
@@ -21,6 +29,16 @@ function send_email($emails, $subject, $message)
    $mail->addAddress($emails);
    $mail->send();
 
+  
+    
+  
+   
+
+
+
 }
+
+
+
 
 

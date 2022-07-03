@@ -19,6 +19,7 @@ class Auth extends Admin_Controller
 	public function login()
 	{
 
+		
 		$this->logged_in();
 
 		$this->form_validation->set_rules('email', 'Email', 'required');

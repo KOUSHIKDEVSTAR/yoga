@@ -1,4 +1,4 @@
- <div class="app-content content ">
+ <div class="app-content content profile-page-content">
 
      <div class="content-wrapper container-xxl p-0">
          <div class="content-header row">
@@ -56,15 +56,17 @@
                      <div class="col-12">
                          <div class="card">
                              <div class="card-body border-bottom">
-                                 <h4 class="card-title">Staff Details</h4>
+                                 <h4 class="card-title">Staff Details
+                                 <a href="<?php echo base_url('staff/add');?>"><button type="button"
+                                                 class="btn btn-primary" data-bs-toggle="" data-bs-target="">Add
+                                                 Staff</button>
+                                         </a>
+                                 </h4>
 
                                  <div class="row">
                                      <div class="col-md-12">
 
-                                         <a href="<?php echo base_url('staff/add');?>"><button type="button"
-                                                 class="btn btn-primary" data-bs-toggle="" data-bs-target="">Add
-                                                 Staff</button>
-                                         </a>
+                                         
 
                                          <?php if($this->session->flashdata('success')): ?>
                                          <div class="demo-spacing-0">
@@ -105,9 +107,9 @@
                                          <thead class="table-light">
                                              <tr>
                                                  <th>#</th>
-                                                 <th>Profile Image</th>
-                                                 <th>Name</th>
-                                                 <th>Email</th>
+                                                 <!-- <th>Profile Image</th> -->
+                                                 <!-- <th>Name</th> -->
+                                                 <th>Staff</th>
                                                  <th>Mobile</th>
                                                  <th>Employeement Type</th>
                                                  <th>Status</th>
@@ -123,11 +125,24 @@
                                             ?>
                                              <tr>
                                                  <td><?= $i;?></td>
-                                                 <td><img class="img-fluid"
+                                                 <!-- <td><img class="img-fluid"
                                                          src="<?php echo  base_url('uploads/profile_image/');?><?=$staff->profile_img;?>"
                                                          style="width: 100px;height: 80px;"></td>
-                                                 <td><?= $staff->firstname;?> <?= $staff->lastname;?></td>
-                                                 <td><?= $staff->email;?></td>
+                                                 <td><?= $staff->firstname;?> <?= $staff->lastname;?></td> -->
+                                                 <td>
+                                                 <div class="d-flex justify-content-left align-items-center">
+                                                         <div class="avatar-wrapper">
+                                                             <div class="avatar me-50"><img
+                                                                     src="<?php echo  base_url('uploads/profile_image/');?><?=$staff->profile_img;?>"
+                                                                     alt="Avatar" width="32" height="32"></div>
+                                                         </div>
+                                                         <div class="d-flex flex-column">
+                                                             <h6 class="user-name text-truncate mb-0"><?= $staff->firstname;?> <?= $staff->lastname;?></h6>
+                                                             <small
+                                                                 class="text-truncate text-muted"><?= $staff->email;?></small>
+                                                         </div>
+                                                     </div
+                                                     </td>
                                                  <td><?= $staff->phone;?></td>
                                                  <td><?= $staff->emp_ment_typ;?></td>
                                                  <?php  if($staff->is_active == 1){?>

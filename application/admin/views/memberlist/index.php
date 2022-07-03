@@ -11,15 +11,18 @@
                      <div class="col-12">
                          <div class="card">
                              <div class="card-body border-bottom">
-                                 <h4 class="card-title">Membership Details</h4>
+                                 <h4 class="card-title">Product/Subscription
 
+                                 <a href="<?php echo base_url('memberlist/add');?>"><button type="button"
+                                                 class="btn btn-primary" data-bs-toggle="" data-bs-target="">Add
+                                                 Product/Subscription</button>
+                                         </a>
+                                 </h4>
+                                 </div>
                                  <div class="row">
                                      <div class="col-md-12">
 
-                                         <a href="<?php echo base_url('memberlist/add');?>"><button type="button"
-                                                 class="btn btn-primary" data-bs-toggle="" data-bs-target="">Add
-                                                 Membership</button>
-                                         </a>
+                                         
 
                                          <?php if($this->session->flashdata('success')): ?>
                                          <div class="demo-spacing-0">
@@ -60,12 +63,14 @@
                                          <thead class="table-light">
                                              <tr>
                                                  <th>#</th>
-                                                 <th>Product Image</th>
-                                                 <th>Tax Type</th>
-                                                 <th>Name</th>
+                                                 <th>Type</th>
+                                                 <th>Product/Subscription</th>
+                                                 <!-- <th>Tax Type</th>
+                                                 <th>Name</th> -->
                                                  <th>Price</th>
                                                  <th>Branch</th>
-                                                 <th>Modelist</th>
+                                                 <!-- <th>Modelist</th> -->
+                                                 <th>Status</th>
                                                  <th>Actions</th>
                                              </tr>
                                          </thead>
@@ -78,16 +83,33 @@
                                             ?>
                                              <tr>
                                                  <td><?= $i;?></td>
+                                                 <td><?= $value->membership_product_type;?></td>
                                                  <td>
-                                                    <img class="img-fluid"
-                                                         src="<?php echo  base_url('uploads/membership_product/');?><?=$value->product_image;?>"
-                                                         style="width: 100px;height: 80px;"></td>
-                                                 <td><?= $value->template_name;?></td>
-                                                 <td><?= $value->name;?></td>
+                                                 <div class="d-flex justify-content-left align-items-center">
+                                                         <div class="avatar-wrapper">
+                                                             <div class="avatar me-50"><img
+                                                                     src="<?php echo  base_url('uploads/membership_product/');?><?=$value->product_image;?>"
+                                                                     alt="Avatar" width="32" height="32"></div>
+                                                         </div>
+                                                         <div class="d-flex flex-column">
+                                                             <h6 class="user-name text-truncate mb-0"><?= $value->name;?></h6>
+                                                             
+                                                         </div>
+                                                     </div
+
+                                                   
+                                                        </td>
+                                                 <!-- <td><?= $value->template_name;?></td> -->
+                                                 <!-- <td><?= $value->name;?></td> -->
                                                  <td><?= $value->price;?></td>
                                                  <td><?= $value->br_name;?></td>
                                                  
-                                                 <td><?= $value->mode_name;?></td>
+                                                 <!-- <td><?= $value->mode_name;?></td> -->
+                                                 <td><?php if($value->is_show == 1){?>
+                                                    <span class="badge bg-light-success">Active</span>
+                                                 <?php }else{?>
+                                                    <span class="badge bg-light-danger">InActive</span>
+                                                 <?php } ?></td>
                                                 
 
                                                  <td>
@@ -109,7 +131,7 @@
                                          </tbody>
                                      </table>
                                  </div>
-                             </div>
+                             
                              <!-- Modal to add new user starts-->
 
                              <!-- Modal to add new user Ends-->

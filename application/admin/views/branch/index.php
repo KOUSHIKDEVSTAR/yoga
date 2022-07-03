@@ -12,7 +12,15 @@
                     <!-- profile -->
                     <div class="card">
                         <div class="card-header border-bottom">
-                            <h4 class="card-title">Profile Details</h4>
+                            <h4 class="card-title">Branch Details
+                            <?php if(in_array('createBranch', $user_permission)): ?>
+
+                            <a href="<?php echo base_url('branch/add');?>"><button type="button"
+                                    class="btn btn-primary" data-bs-toggle="" data-bs-target="">Add
+                                    Branch</button></a>
+                            
+                            <?php endif; ?>
+                            </h4>
                         </div>
                         <div class="card-body py-2 my-25">
                             <!-- header section -->
@@ -23,13 +31,7 @@
 
                                 
 
-                                <?php if(in_array('createBranch', $user_permission)): ?>
-
-                                <a href="<?php echo base_url('branch/add');?>"><button type="button"
-                                        class="btn btn-primary" data-bs-toggle="" data-bs-target="">Add
-                                        Branch</button></a>
-                                <br /> <br />
-                                <?php endif; ?>
+                                
                                <!--/ header section -->
                                <?php if($this->session->flashdata('success')): ?>
                                 <div class="demo-spacing-0">
@@ -61,9 +63,7 @@
 
                             <?php endif; ?>
                                 <div class="box">
-                                    <div class="box-header">
-                                        <h3 class="box-title">Manage Branchs</h3>
-                                    </div>
+                                    
                                     <!-- /.box-header -->
                                     <div class="box-body card-datatable table-responsive pt-0">
                                         <table id="branchTable" class="user-list-table table">

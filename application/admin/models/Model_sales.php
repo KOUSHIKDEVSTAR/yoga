@@ -9,10 +9,10 @@ class Model_sales extends CI_Model
 
 	public function getAllSalesdetails($id = null) 
 	{
-		$this->db->select('sales.*,customers.full_name,customers.email,customers.mobile_number,customers.pr_image,customers.address,products.name,tax_master.template_name');
+		$this->db->select('sales.*,customers.full_name,customers.email,customers.mobile_number,customers.pr_image,customers.address,membership_list.name,tax_master.template_name');
 		$this->db->from('sales');
 		$this->db->join('customers','customers.cust_id=sales.sl_cust_id','INNER');
-		$this->db->join('products','products.id=sales.sl_product_id','INNER');
+		$this->db->join('membership_list','membership_list.memberlist_id =sales.sl_product_id','INNER');
 		$this->db->join('tax_master','tax_master.tax_id=sales.sl_pr_suscription','INNER');
 		if($id){
 			$this->db->where('sales.sale_id',$id);

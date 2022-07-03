@@ -12,7 +12,7 @@
                  <!-- list and filter start -->
                  <div class="card">
                      <div class="card-body border-bottom">
-                         <h4 class="card-title">Add Memebership Details</h4>
+                         <h4 class="card-title">Add Plans & Product</h4>
 
                          <div class="row">
                              <div class="col-md-12">
@@ -33,7 +33,20 @@
                                                      <div class="col-md-6 col-12">
                                                          <div class="mb-1">
                                                              <label class="form-label"
-                                                                 for="first-name-column">Type</label>
+                                                                 for="first-name-column">Select Membership Or Product</label>
+                                                             <select class="form-select form-select-lg" id="membership_product_type" name="membership_product_type"
+                                                                 id="selectLarge">
+                                                                <option>Choose One</option>
+                                                                <option value="Membership">Membership</option>
+                                                                <option value="Product">Product</option>
+                                                            
+                                                             </select>
+                                                         </div>
+                                                     </div>
+                                                     <div class="col-md-6 col-12">
+                                                         <div class="mb-1">
+                                                             <label class="form-label"
+                                                                 for="first-name-column">Tax Applied</label>
                                                              <select class="form-select form-select-lg" name="type"
                                                                  id="selectLarge">
                                                                  <option>Choose One</option>
@@ -41,6 +54,37 @@
                                                                     <option value="<?= $tax->tax_id;?>"><?= $tax->template_name;?></option>
 
                                                                 <?php  }?>
+                                                            
+                                                             </select>
+                                                         </div>
+                                                     </div>
+                                                     <div class="col-md-6 col-12" id="cancel_div">
+                                                         <div class="mb-1">
+                                                             <label class="form-label"
+                                                                 for="first-name-column">Cancelation Policy</label>
+                                                             <select class="form-select form-select-lg" id="cancelation_policy" name="cancelation_policy"
+                                                                 id="selectLarge">
+                                                                 <option>Choose One</option>
+                                                                 <?php foreach($cancelation_policy as $policy){?>
+                                                                    <option value="<?= $policy->cancel_id;?>"><?= $policy->type;?></option>
+
+                                                                <?php  } ?>
+                                                            
+                                                             </select>
+                                                         </div>
+                                                     </div>
+                                                     <div class="col-md-6 col-12">
+                                                         <div class="mb-1">
+                                                             <label class="form-label"
+                                                                 for="first-name-column">Is Show Product</label>
+                                                             <select class="form-select form-select-lg" id="show_product" name="show_product"
+                                                                 id="selectLarge">
+                                                                 <option>Choose One</option>
+                                                                
+                                                                    <option value="1">Yes</option>
+                                                                    <option value="0">No</option>
+
+                                                             
                                                             
                                                              </select>
                                                          </div>
@@ -70,25 +114,7 @@
                                                                placeholder="Discounted Price" name="discounted_price" />
                                                        </div>
                                                      </div>
-                                                     
-                                                     <div class="col-md-6 col-12">
-                                                       <div class="mb-1">
-                                                           <label class="form-label" for="city-column">Validity In Days
-                                                               </label>
-                                                           <input type="text" id="" class="form-control"
-                                                               placeholder="Validity In Days" name="validty_days" />
-                                                       </div>
-                                                     </div>
-                                                     <div class="col-md-6 col-12">
-                                                         <div class="mb-1">
-                                                             <label class="form-label" for="first-name-column">No. Of Session</label>
-                                                                 <input type="text" id="" class="form-control"
-                                                               placeholder="No. Of Session" name="no_session" />
-                                                             
-                                                         </div>
-                                                     </div>
-                                                    
-                                                     <div class="col-md-6 col-12">
+                                                      <div class="col-md-6 col-12">
                                                          <div class="mb-1">
                                                              <label class="form-label"
                                                                  for="first-name-column">Branch</label>
@@ -103,7 +129,29 @@
                                                              </select>
                                                          </div>
                                                      </div>
-                                                      <div class="col-md-6 col-12">
+                                                     <div  class="row" id="val_session_div">
+                                                         <div class="col-md-6 col-12">
+                                                       <div class="mb-1">
+                                                           <label class="form-label" for="city-column">Validity In Days
+                                                               </label>
+                                                           <input type="text" id="" class="form-control"
+                                                               placeholder="Validity In Days" name="validty_days" />
+                                                       </div>
+                                                    </div>
+                                                     <div class="col-md-6 col-12">
+                                                         <div class="mb-1">
+                                                             <label class="form-label" for="first-name-column">No. Of Session</label>
+                                                                 <input type="text" id="no_of_session" class="form-control"
+                                                               placeholder="No. Of Session" name="no_session" />
+                                                             
+                                                         </div>
+                                                     </div>
+                                                     </div>
+                                                     
+                                                    
+                                                    
+                                                    
+                                                      <div class="col-md-6 col-12" id="mode_list_div">
                                                          <div class="mb-1">
                                                              <label class="form-label"
                                                                  for="first-name-column">Mode List</label>
@@ -119,12 +167,24 @@
                                                          </div>
                                                      </div>
 
-                                                     <div class="col-md-12 col-12">
+                                                     <div class="col-md-6 col-12">
                                                        <div class="mb-1">
                                                            <label class="form-label" for="city-column">Image
                                                                </label>
                                                            <input type="file" id="" class="form-control"
                                                                placeholder="" name="image" />
+                                                       </div>
+                                                     </div>
+                                                     <div class="col-md-12 col-12">
+                                                       <div class="mb-1">
+                                                           <label class="form-label" for="city-column">Is Shareable
+                                                               </label>
+                                                           <select class="form-select form-select-lg" name="is_sharable"
+                                                                 id="is_sharable" required>
+                                                                <option value="">Choose One</option>
+                                                                <option value="1">Yes</option>
+                                                                <option value="2">No</option>
+                                                             </select>
                                                        </div>
                                                      </div>
                                                     
@@ -161,6 +221,36 @@
  <script type="text/javascript">
 $(document).ready(function() {
     $("#memberlist").addClass('active');
+
+});
+$(document).ready(function(e){
+    $('#membership_product_type').on('change',function(e){
+        var membership_product_type = $('#membership_product_type').val();
+        if(membership_product_type == "Product"){
+            $('#val_session_div').hide();
+            $('#mode_list_div').hide();
+            $('#cancel_div').hide();
+
+        }else{
+            $('#val_session_div').show();
+            $('#mode_list_div').show();
+             $('#cancel_div').show();
+
+
+        }
+
+    });
+     $('#cancelation_policy').on('change',function(e){
+        var cancelation_policy = $('#cancelation_policy').val();
+        if(cancelation_policy == 2){
+            $('#no_of_session').val(999);
+
+        }else{
+             $('#no_of_session').val('');
+
+        }
+
+    });
 
 });
 </script>

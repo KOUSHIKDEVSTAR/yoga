@@ -15,7 +15,12 @@ class Login  extends Admin_Controller
 	}
 
     public function index(){
-         $this->load->view('login',$this->data);
+        if($this->session->userdata('cust_email')){
+            return redirect('profile');
+        }else{
+            $this->load->view('login',$this->data);
+        }
+         
 
     }
     public function auth(){

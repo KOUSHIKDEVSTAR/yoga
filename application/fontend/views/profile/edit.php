@@ -10,7 +10,7 @@
              <section class="app-user-list">
 
                  <!-- list and filter start -->
-                 <div class="container">
+                 <div class="">
                  <div class="card offset-1">
                      <div class="card-body border-bottom">
                          <h4 class="card-title">Edit Customer Details</h4>

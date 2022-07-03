@@ -1,5 +1,11 @@
 <!-- BEGIN: Content-->
-<div class="app-content content ">
+<style>
+    table#\ groupTable {
+    width: 100%;
+    line-height: 38px;
+}
+</style>
+<div class="app-content content profile-page-content">
     <div class="content-overlay"></div>
     <div class="header-navbar-shadow"></div>
     <div class="content-wrapper container-xxl p-0">
@@ -111,7 +117,7 @@
                                         <label for="permission">Permission</label>
 
                                         <div class="box-body card-datatable table-responsive pt-0">
-                                            <table id=" groupTable" class="user-list-table table">
+                                            <table id=" groupTable" class="">
                                                 <thead>
                                                     <tr>
                                                         <th>Name</th>
@@ -188,19 +194,31 @@
                                                         <td><input type="checkbox" name="permission[]" id="permission"
                                                                 value="deleteCustomer" class="minimal"></td>
                                                     </tr>
+                                                    <tr>
+                                                        <td>Sales</td>
+                                                        <td><input type="checkbox" name="permission[]" id="permission"
+                                                                value="createSales" class="minimal"></td>
+                                                        <td><input type="checkbox" name="permission[]" id="permission"
+                                                                value="updateSales" class="minimal"></td>
+                                                        <td><input type="checkbox" name="permission[]" id="permission"
+                                                                value="viewSales" class="minimal"></td>
+                                                        <td><input type="checkbox" name="permission[]" id="permission"
+                                                                value="deleteSales" class="minimal"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Video</td>
+                                                        <td><input type="checkbox" name="permission[]" id="permission"
+                                                                value="createVideo" class="minimal"></td>
+                                                        <td><input type="checkbox" name="permission[]" id="permission"
+                                                                value="updateVideo" class="minimal"></td>
+                                                        <td><input type="checkbox" name="permission[]" id="permission"
+                                                                value="viewVideo" class="minimal"></td>
+                                                        <td><input type="checkbox" name="permission[]" id="permission"
+                                                                value="deleteVideo" class="minimal"></td>
+                                                    </tr>
                                                     <!--
                                                     
-                                                    <tr>
-                                                        <td>Attributes</td>
-                                                        <td><input type="checkbox" name="permission[]" id="permission"
-                                                                value="createAttribute" class="minimal"></td>
-                                                        <td><input type="checkbox" name="permission[]" id="permission"
-                                                                value="updateAttribute" class="minimal"></td>
-                                                        <td><input type="checkbox" name="permission[]" id="permission"
-                                                                value="viewAttribute" class="minimal"></td>
-                                                        <td><input type="checkbox" name="permission[]" id="permission"
-                                                                value="deleteAttribute" class="minimal"></td>
-                                                    </tr>
+                                                    
                                                     
                                                     <tr>
                                                         <td>Orders</td>

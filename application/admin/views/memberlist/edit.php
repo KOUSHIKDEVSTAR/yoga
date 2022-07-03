@@ -12,7 +12,7 @@
                  <!-- list and filter start -->
                  <div class="card">
                      <div class="card-body border-bottom">
-                         <h4 class="card-title">Edit Memebership Details</h4>
+                         <h4 class="card-title">Edit Plans and Product </h4>
 
                          <div class="row">
                              <div class="col-md-12">
@@ -77,14 +77,14 @@
                                                            <label class="form-label" for="city-column">Validity In Days
                                                                </label>
                                                            <input type="text" id="" value="<?= $edit_data[0]->validty_days;?>" class="form-control"
-                                                               placeholder="Validity In Days" name="validty_days" />
+                                                               placeholder="Validity In Days" name="validty_days" readonly />
                                                        </div>
                                                      </div>
                                                      <div class="col-md-6 col-12">
                                                          <div class="mb-1">
                                                              <label class="form-label"  for="first-name-column">No. Of Session</label>
                                                                  <input type="text" id="" value="<?= $edit_data[0]->no_session;?>" class="form-control"
-                                                               placeholder="No. Of Session" name="no_session" />
+                                                               placeholder="No. Of Session" name="no_session" readonly />
                                                              
                                                          </div>
                                                      </div>
@@ -94,7 +94,7 @@
                                                              <label class="form-label"
                                                                  for="first-name-column">Branch</label>
                                                              <select class="form-select form-select-lg" name="branch"
-                                                                 id="selectLarge">
+                                                                 id="selectLarge" >
                                                                  <option>Choose One</option>
                                                                  <?php foreach($branch_data as $branch){?>
                                                                     <option value="<?=$branch['id'];?>" <?php if($branch['id'] == $edit_data[0]->branch_id){echo "selected";}?>><?= $branch['name'];?></option>
@@ -134,6 +134,47 @@
                                                        <div class="mb-1">
                                                         <img src="<?= base_url('uploads/membership_product/');?><?= $edit_data[0]->product_image;?>" style="width: 100px;height: 100px;">
                                                            
+                                                       </div>
+                                                     </div>
+                                                     <div class="col-md-6 col-12">
+                                                         <div class="mb-1">
+                                                             <label class="form-label"
+                                                                 for="first-name-column">Is Show Product</label>
+                                                             <select class="form-select form-select-lg" id="show_product" name="show_product"
+                                                                 id="selectLarge" required>
+                                                                 <option>Choose One</option>
+
+
+                                                                
+                                                                    <option value="1"<?php if($edit_data[0]->is_show == 1){echo "selected";};?>>Yes</option>
+                                                                    <option value="0"<?php if($edit_data[0]->is_show == 0){echo "selected";};?>>No</option>
+
+                                                             
+                                                            
+                                                             </select>
+                                                         </div>
+                                                     </div>
+                                                     <div class="col-md-6 col-12">
+                                                       <div class="mb-1">
+                                                           <label class="form-label" for="city-column">Is Shareable
+                                                               </label>
+                                                           <!-- <select class="form-select form-select-lg" name="is_sharable"
+                                                                 id="is_sharable" required readonly>
+                                                                <option value="">Choose One</option>
+                                                                <option value="1" <?php if($edit_data[0]->is_sharable == 1){echo "selected";};?>>Yes</option>
+                                                                <option value="2" <?php if($edit_data[0]->is_sharable == 2){echo "selected";};?>>No</option>
+                                                             </select> -->
+                                                             <?php if($edit_data[0]->is_sharable == 1){?>
+                                                             <input type="hidden" id="" value="1" class="form-control"
+                                                               placeholder="Validity In Days" name="is_sharable" readonly />
+                                                               <input type="text" id="" value="Yes" class="form-control"
+                                                               placeholder="Validity In Days" readonly />
+                                                               <?php }else{?>
+                                                                <input type="hidden" id="" value="2" class="form-control"
+                                                               placeholder="Validity In Days" name="is_sharable" readonly />
+                                                               <input type="text" id="" value="No" class="form-control"
+                                                               placeholder="Validity In Days"readonly />
+                                                                <?php }?>
                                                        </div>
                                                      </div>
                                                      <div class="col-md-12 col-12">

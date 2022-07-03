@@ -44,3 +44,16 @@ ALTER TABLE `customers` CHANGE `created_at` `created_at` VARCHAR(255) CHARACTER 
 
 
 /*=================24-02-22========================================*/
+
+
+
+
+
+
+
+
+
+ALTER TABLE `tbl_schedule_mang` ADD `class_time` VARCHAR(30) NULL DEFAULT NULL AFTER `excluded_days`, ADD `created_at` VARCHAR(20) NULL DEFAULT NULL AFTER `class_time`, ADD `created_month` VARCHAR(20) NULL DEFAULT NULL AFTER `created_at`;
+ALTER TABLE `tbl_schedule_mang` ADD `created_year` VARCHAR(20) NULL DEFAULT NULL AFTER `created_month`;
+ALTER TABLE `tbl_schedule_mang` ADD `created_da` VARCHAR(11) NULL DEFAULT NULL AFTER `created_year`;
+ALTER TABLE `membership_list` ADD `membership_product_type` TEXT NULL DEFAULT NULL AFTER `created_at`;
